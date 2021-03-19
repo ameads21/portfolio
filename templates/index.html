@@ -8,118 +8,121 @@ Engineer{%endblock%} {%block content%}
     </p>
   </div>
 </div>
-<div class="section-header about container" id="about">
-  <h2>About Me</h2>
-  <a href="https://github.com/ameads21" target="_blank" id="githubIcon"
-    ><i class="fab fa-github mb-5"></i
-  ></a>
-  <div class="row">
-    <div class="col">
-      <img
-        src="../static/profile_pic.jpg"
-        alt="profile picture"
-        class="img-thumbnail rounded"
-      />
-    </div>
-    <p class="col mr-4">
-      I started my journey as a programmer when I was the age of 16 by creating
-      my own video games. Since then, my desire to program as a website
-      developer, software developer, or even a video game developer has become a
-      reality. I started by simply learning the basics of GameMaker Language
-      (GML) to the more intermediate part of website development. As a quick and
-      desirable learner, I wish to become the most proficient in any
-      technological language that comes into my life.
-    </p>
-  </div>
-</div>
-
-<div class="container-fluid key-services">
-  <h1 class="text-light">Experience</h1>
-  <div class="container key-content">
+<div data-spy="scroll" data-target="#navbar">
+  <div class="section-header about container" id="about">
+    <h2>About Me</h2>
+    <a href="https://github.com/ameads21" target="_blank" id="githubIcon"
+      ><i class="fab fa-github mb-5"></i
+    ></a>
     <div class="row">
-      <div class="col col-md-5 mt-5 mt-md-0 key-topic mb-5">
-        <div class="icons">
-          <i class="fas fa-code"></i>
-        </div>
-        <h5 class="text-center mb-5">Programming Languages</h5>
-
-        {%for l in languages%}
-        <div class="row mt-3">
-          <div class="col-4">
-            <p>{{l.key}}</p>
-          </div>
-          <div class="col-8">
-            <div class="progress">
-              <div
-                class="progress-bar progress-bar"
-                role="progressbar"
-                style="width: {{l.value}}"
-                aria-valuenow="10"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                {{l.value}}
-              </div>
-            </div>
-          </div>
-        </div>
-        {%endfor%}
+      <div class="col">
+        <img
+          src="../static/profile_pic.jpg"
+          alt="profile picture"
+          class="img-thumbnail rounded"
+        />
       </div>
+      <p class="col mr-4">
+        I started my journey as a programmer when I was the age of 16 by
+        creating my own video games. Since then, my desire to program as a
+        website developer, software developer, or even a video game developer
+        has become a reality. I started by simply learning the basics of
+        GameMaker Language (GML) to the more intermediate part of website
+        development. As a quick and desirable learner, I wish to become the most
+        proficient in any technological language that comes into my life.
+      </p>
+    </div>
+  </div>
 
-      <div class="col-2"></div>
-      <div class="col col-md-5 mt-5 mt-md-0 key-topic mb-5">
-        <div class="icons">
-          <i class="fas fa-puzzle-piece"></i>
-        </div>
-        <h5 class="text-center mb-5">Frameworks/Libraries/Tools</h5>
-
-        {%for f in frameworks%}
-        <div class="row mt-3">
-          <div class="col-4">
-            <p>{{f.key}}</p>
+  <div class="container-fluid key-services section-header" id="experience">
+    <h1 class="text-light">Experience</h1>
+    <div class="container key-content">
+      <div class="row">
+        <div class="col col-md-5 mt-5 mt-md-0 key-topic mb-5">
+          <div class="icons">
+            <i class="fas fa-code"></i>
           </div>
-          <div class="col-8">
-            <div class="progress">
-              <div
-                class="progress-bar progress-bar"
-                role="progressbar"
-                style="width: {{f.value}}"
-                aria-valuenow="10"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                {{f.value}}
+          <h5 class="text-center mb-5">Programming Languages</h5>
+
+          {%for l in languages%}
+          <div class="row mt-3">
+            <div class="col-4">
+              <p>{{l.key}}</p>
+            </div>
+            <div class="col-8">
+              <div class="progress">
+                <div
+                  class="progress-bar progress-bar"
+                  role="progressbar"
+                  style="width: {{l.value}}"
+                  aria-valuenow="10"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  {{l.value}}
+                </div>
               </div>
             </div>
           </div>
+          {%endfor%}
         </div>
-        {%endfor%}
+
+        <div class="col-2"></div>
+        <div class="col col-md-5 mt-5 mt-md-0 key-topic mb-5">
+          <div class="icons">
+            <i class="fas fa-puzzle-piece"></i>
+          </div>
+          <h5 class="text-center mb-5">Frameworks/Libraries/Tools</h5>
+
+          {%for f in frameworks%}
+          <div class="row mt-3">
+            <div class="col-4">
+              <p>{{f.key}}</p>
+            </div>
+            <div class="col-8">
+              <div class="progress">
+                <div
+                  class="progress-bar progress-bar"
+                  role="progressbar"
+                  style="width: {{f.value}}"
+                  aria-valuenow="10"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  {{f.value}}
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="mt-5 container">
-  <h1 class="text-center mb-5">Projects</h1>
-  <div class="row">
-    {%for project in projects%}
-    <div class="col-lg-3 col-md-4 col-xs-6 mx-auto">
-      <div class="card mx-auto">
-        <img
-          class="card-img project-image mx-auto"
-          src="{{project.image}}"
-          alt="{{project.title}}"
-        />
-        <div class="card-img-overlay">
-          <h5 class="card-title">{{project.title}}</h5>
-          <p class="card-text">{{project.languages}}</p>
-          <a href="{{project.link}}" class="btn btn-primary" target="_blank"
-            >Visit</a
-          >
+  <div class="project-container" id="projects">
+    <div class="container project-contents">
+      <h1 class="text-center mb-5">Projects</h1>
+      <div class="row">
+        {%for project in projects%}
+        <div class="col-lg-3 col-md-4 col-xs-6 mx-auto">
+          <div class="card mx-auto">
+            <img
+              class="card-img project-image mx-auto img-thumbnail"
+              src="{{project.image}}"
+              alt="{{project.title}}"
+            />
+            <div class="card-img-overlay">
+              <h5 class="card-title">{{project.title}}</h5>
+              <p class="card-text">{{project.languages}}</p>
+              <a href="{{project.link}}" class="btn btn-primary" target="_blank"
+                >Visit</a
+              >
+            </div>
+          </div>
         </div>
+        {%endfor%}
       </div>
     </div>
-
-    {%endfor%}
   </div>
 </div>
 {%endblock%}
