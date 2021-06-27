@@ -41,8 +41,7 @@ def home_page():
         Comments - {form.comments.data}""")
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
-        server.login("aaron.meadsprogram@gmail.com",
-                     os.environ.get('PASSWORD', config('PASSWORD')))
+        server.login("aaron.meadsprogram@gmail.com", os.environ.get('PASSWORD', "PASSWORD"))
         server.sendmail("aaron.meadsprogram@gmail.com",
                         form.email.data, message)
         server.sendmail("aaron.meadsprogram@gmail.com",
