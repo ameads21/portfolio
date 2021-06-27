@@ -39,8 +39,10 @@ def home_page():
         Email - {form.email.data}
         Position Title - {form.position.data}
         Comments - {form.comments.data}""")
-        server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-        server.login("aaron.meadsprogram@gmail.com", os.environ.get("PASSWORD", 'Password'))
+        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server.ehlo()
+        server.starttls()
+        server.login("aaron.meadsprogram@gmail.com", os.environ.get("PASSWORD", 'PASSWORD'))
         server.sendmail("aaron.meadsprogram@gmail.com",
                         form.email.data, message)
         server.sendmail("aaron.meadsprogram@gmail.com",
