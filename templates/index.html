@@ -129,23 +129,10 @@ Engineer{%endblock%} {%block content%}
   </div>
 </div>
 <hr />
-<div class="container shadow p-3 mb-5 mt-5 bg-white rounded" id="contact">
+<div class="container p-3 mb-5 mt-5 bg-white rounded" id="contact">
   <h1 class="text-center mt-5">Let's get in touch</h1>
   <p class="text-center">
-    If you're interested in my work, or want to get in touch, fill in the form
-    below or send an email to <b>aaron.meadsprogram@gmail.com</b>
+    If you're interested in my work, or want to get in touch, send an email to <b>aaron.meadsprogram@gmail.com</b>
   </p>
-  <form method="POST">
-    {{form.hidden_tag()}} {%for field in form if field.widget.input_type !=
-    'hidden' %}
-    <p>
-      {{field.label}} {{field(class_="form-control")}} {% for error in
-      field.errors %}
-      <span class="form-text text-danger">{{error}}</span>
-      {%endfor%}
-    </p>
-    {%endfor%}
-    <button class="btn btn-success" id="formsubmit">Submit</button>
-  </form>
 </div>
 {%endblock%}
